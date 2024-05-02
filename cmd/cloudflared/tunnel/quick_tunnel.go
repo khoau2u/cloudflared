@@ -29,6 +29,7 @@ func RunQuickTunnel(sc *subcommandContext) error {
 
 	client := http.Client{
 		Transport: &http.Transport{
+			Proxy:                 http.ProxyFromEnvironment
 			TLSHandshakeTimeout:   httpTimeout,
 			ResponseHeaderTimeout: httpTimeout,
 		},
